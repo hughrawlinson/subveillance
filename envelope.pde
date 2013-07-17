@@ -45,9 +45,9 @@ class envelope{
   }
   
   void release(){
+    this.releasedTime = this.phase;
     this.stage = 4;
     this.released = true;
-    this.releasedTime = this.phase;
   }
   
   float getValue(){
@@ -68,10 +68,10 @@ class envelope{
       this.currentLevel = this.sustainLevel;
     }
     else if(this.stage == 4){
-      if(this.phase >= this.releasedTime + this.releaseLength){
+      if(this.phase >= (this.releasedTime + this.releaseLength)){
         this.stage++;
       }
-      this.currentLevel = this.currentLevel - ((this.phase-this.releasedTime)/this.releaseLength)*this.currentLevel;
+      this.currentLevel = (float)this.currentLevel - (((float)this.phase- (float)this.releasedTime)/ (float)this.releaseLength)* (float)this.currentLevel;
     }
     else{
       phase = 0;

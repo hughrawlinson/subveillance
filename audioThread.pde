@@ -94,7 +94,7 @@ public class AudioThread extends Thread {
   // run gets called when the thread starts
   @Override
   // We must implement run, this gets triggered by start()
-  void run () {
+  public void run () {
     while (running) {
       // generate the float buffer
       generateAudioOut(fOutputs[0]);

@@ -29,6 +29,10 @@ class lowPassFilter{
     this.filterFrequency = _frequency;
   }
   
+  float getFrequency(){
+    return this.filterFrequency;
+  }
+  
   void setResonance(float _resonance){
     this.filterResonance = _resonance;
   }
